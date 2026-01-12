@@ -1,0 +1,338 @@
+@import "/home/oldjobobo/.config/omarchy/current/theme/waybar.css";
+
+@define-color fg @foreground;
+@define-color bg @background;
+@define-color glass alpha(@background, 0.85);
+@define-color glass-strong alpha(@background, 0.92);
+@define-color edge alpha(@foreground, 0.18);
+@define-color edge-strong alpha(@foreground, 0.32);
+@define-color dim alpha(@foreground, 0.55);
+@define-color bright alpha(@foreground, 0.9);
+@define-color ws-active #686868;
+@define-color shadow #111111;
+
+* {
+  background: transparent;
+  color: @fg;
+  border: none;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font Propo';
+  font-size: 18px;
+  letter-spacing: 0.75px;
+}
+
+window#waybar {
+  background: transparent;
+  border-bottom: none;
+}
+
+#waybar > box {
+  margin: 8px 4px 4px 4px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.modules-left,
+.modules-right {
+  padding: 0px;
+  margin: 0px;
+}
+
+.modules-center {
+  border-color: @ws-active;
+}
+
+#workspaces {
+  background-color: @glass;
+  margin: 2px 4px 2px 4px;
+  min-height: 24px;
+  padding: 2px 4px;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 0 3px 2px @shadow;
+}
+
+#workspaces button {
+  margin: 2px 2px 2px 2px;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  background-image:
+    linear-gradient(135deg, transparent 8px, alpha(@fg, 0.12) 0),
+    linear-gradient(315deg, transparent 8px, alpha(@fg, 0.12) 0),
+    linear-gradient(alpha(@fg, 0.12), alpha(@fg, 0.12)),
+    linear-gradient(alpha(@fg, 0.12), alpha(@fg, 0.12));
+  background-size: 50% 50%;
+  background-position: top left, bottom right, top right, bottom left;
+  background-repeat: no-repeat;
+  color: @fg;
+  transition: color 0.24s ease-in-out, background-color 0.24s ease-in-out, min-width 0.24s ease-in-out;
+  font-size: 4px;
+}
+
+#workspaces button label {
+  color: @dim;
+  font-size: 11px;
+}
+
+#workspaces button.active {
+  background-color: transparent;
+  background-image:
+    linear-gradient(135deg, transparent 8px, @ws-active 0),
+    linear-gradient(315deg, transparent 8px, @ws-active 0),
+    linear-gradient(@ws-active, @ws-active),
+    linear-gradient(@ws-active, @ws-active);
+  background-size: 50% 50%;
+  background-position: top left, bottom right, top right, bottom left;
+  background-repeat: no-repeat;
+  color: @fg;
+  min-width: 24px;
+}
+
+#workspaces button.active label {
+  color: @fg;
+}
+
+#workspaces button:hover {
+  color: @bright;
+  min-width: 38px;
+}
+
+#workspaces:hover button.active {
+  min-width: 24px;
+}
+
+#workspaces button.active:hover {
+  min-width: 38px;
+}
+
+#workspaces button.empty {
+  opacity: 0.55;
+  border: none;
+  color: @dim;
+}
+
+#workspaces button.empty label {
+  color: @dim;
+}
+
+#tray,
+#mpris,
+#cpu,
+#clock,
+#battery,
+#network,
+#memory,
+#backlight,
+#bluetooth,
+#pulseaudio,
+#group-cpu-memory,
+#custom-omarchy,
+#custom-weather,
+#custom-update,
+#idle_inhibitor,
+#custom-expand-icon,
+#custom-screenrecording-indicator,
+#custom-updatespacman {
+  min-width: 40px;
+  margin: 2px 8px 4px 8px;
+  padding: 0 16px;
+  min-height: 24px;
+  border-radius: 0;
+  background-color: @glass;
+  font-size: 14px;
+  border: none;
+  color: @fg;
+  box-shadow: 0 0 3px 2px @shadow;
+}
+
+#custom-omarchy,
+#custom-update,
+#custom-updatespacman,
+#custom-expand-icon,
+#custom-screenrecording-indicator,
+#idle_inhibitor,
+#bluetooth,
+#network,
+#pulseaudio {
+  padding: 0;
+  min-width: 40px;
+}
+
+#custom-expand-icon {
+  color: @bright;
+}
+
+#custom-omarchy {
+  text-shadow: none;
+  color: @fg;
+}
+
+#custom-update,
+#custom-updatespacman {
+  color: @bright;
+}
+
+#clock {
+  color: @bright;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+#idle_inhibitor {
+  color: @dim;
+}
+
+#idle_inhibitor.activated {
+  color: @bright;
+}
+
+#tray {
+  color: @bright;
+}
+
+#custom-tray-cap {
+  min-width: 4px;
+  background: @glass;
+  color: @bright;
+  font-size: 18px;
+  box-shadow: 0 0 3px 2px @shadow;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+  color: @dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  color: @bright;
+}
+
+#tray * {
+  color: @bright;
+  font-size: 18px;
+}
+
+#network {
+  color: @bright;
+}
+
+#pulseaudio {
+  color: @bright;
+}
+
+#backlight {
+  color: @bright;
+}
+
+#battery {
+  color: @bright;
+}
+
+#battery.warning,
+#battery.critical {
+  color: @bright;
+  background-color: alpha(@fg, 0.08);
+}
+
+#cpu {
+  color: @bright;
+}
+
+#memory {
+  color: @dim;
+}
+
+#mpris {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: 0 0 3px 2px @shadow;
+  border-color: transparent;
+  color: @bright;
+  animation: none;
+  font-size: 14px;
+}
+
+#mpris.playing {
+  min-width: 20px;
+  margin: 2px 8px 0px 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 0;
+  background-color: @glass;
+  box-shadow: 0 0 3px 2px @shadow;
+}
+
+#mpris.paused {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+}
+
+#mpris.empty,
+#mpris.stopped {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#window {
+  color: @dim;
+}
+
+#window label {
+  color: @dim;
+}
+
+#bluetooth {
+  color: @bright;
+}
+
+#custom-weather {
+  color: @dim;
+  font-size: 14px;
+}
+
+#custom-screenrecording-indicator {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: alpha(@fg, 0.4);
+}
+
+#custom-screenrecording-indicator.active {
+  color: @bright;
+  animation-name: ember-blink;
+  animation-duration: 0.65s;
+}
+
+tooltip {
+  padding: 6px 8px;
+  background: @glass-strong;
+  border: 1px solid @edge;
+  border-radius: 8px;
+  font-size: 8px;
+  box-shadow: none;
+}
+
+tooltip label {
+  color: @fg;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes ember-blink {
+  to {
+    color: alpha(@fg, 0.2);
+  }
+}
