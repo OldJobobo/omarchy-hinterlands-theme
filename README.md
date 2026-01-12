@@ -47,9 +47,4 @@ omarchy-theme-install https://github.com/OldJobobo/omarchy-hinterlands-theme
     <td><img src="backgrounds/17_hinterlands.png" width="220" alt="17_hinterlands"></td>
     <td><img src="backgrounds/18_hinterlands.png" width="220" alt="18_hinterlands"></td>
   </tr>
-  <tr>
-    <td><img src="backgrounds/19_hinterlands.png" width="220" alt="19_hinterlands"></td>
-    <td></td>
-    <td></td>
-  </tr>
 </table>
