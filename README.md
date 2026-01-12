@@ -4,7 +4,7 @@ Hinterlands is a monochrome, dark-mode theme inspired by foggy waterlines and di
 
 ## Preview
 
-![Theme preview](backgrounds/preview.png)
+![Theme preview](preview.png)
 
 ## Install
 
