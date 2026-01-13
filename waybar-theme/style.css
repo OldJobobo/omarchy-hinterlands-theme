@@ -1,4 +1,4 @@
-@import "/home/oldjobobo/.config/omarchy/current/theme/waybar.css";
+@import "../omarchy/current/theme/waybar.css";
 
 @define-color fg @foreground;
 @define-color bg @background;
