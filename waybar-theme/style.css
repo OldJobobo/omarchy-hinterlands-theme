@@ -1,5 +1,7 @@
+/* === Imports === */
 @import "../omarchy/current/theme/waybar.css";
 
+/* === Color Tokens === */
 @define-color fg @foreground;
 @define-color bg @background;
 @define-color glass alpha(@background, 0.85);
@@ -11,6 +13,7 @@
 @define-color ws-active #686868;
 @define-color shadow #111111;
 
+/* === Base Reset & Typography === */
 * {
   background: transparent;
   color: @fg;
@@ -21,6 +24,7 @@
   letter-spacing: 0.75px;
 }
 
+/* === Bar Container & Layout === */
 window#waybar {
   background: transparent;
   border-bottom: none;
@@ -41,6 +45,7 @@ window#waybar {
   border-color: @ws-active;
 }
 
+/* === Workspaces === */
 #workspaces {
   background-color: @glass;
   margin: 2px 4px 2px 4px;
@@ -115,6 +120,7 @@ window#waybar {
   color: @dim;
 }
 
+/* === Module Surface Defaults === */
 #tray,
 #mpris,
 #cpu,
@@ -145,6 +151,7 @@ window#waybar {
   box-shadow: 0 0 3px 2px @shadow;
 }
 
+/* === Compact Modules === */
 #custom-omarchy,
 #custom-update,
 #custom-updatespacman,
@@ -154,10 +161,11 @@ window#waybar {
 #bluetooth,
 #network,
 #pulseaudio {
-  padding: 0;
+  padding: 2px;
   min-width: 40px;
 }
 
+/* === Per-Module Styling === */
 #custom-expand-icon {
   color: @bright;
 }
@@ -244,10 +252,31 @@ window#waybar {
   color: @dim;
 }
 
+#bluetooth {
+  color: @bright;
+}
+
+#custom-weather {
+  color: @dim;
+  font-size: 14px;
+}
+
+#custom-screenrecording-indicator {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: alpha(@fg, 0.4);
+}
+
+#custom-screenrecording-indicator.active {
+  color: @bright;
+  animation-name: ember-blink;
+  animation-duration: 0.65s;
+}
+
+/* === MPRIS === */
 #mpris {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
+  padding: 2px;
   background: transparent;
   box-shadow: 0 0 3px 2px @shadow;
   border-color: transparent;
@@ -258,7 +287,6 @@ window#waybar {
 
 #mpris.playing {
   min-width: 20px;
-  margin: 2px 8px 0px 8px;
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 0;
@@ -284,6 +312,7 @@ window#waybar {
   box-shadow: none;
 }
 
+/* === Window Title === */
 #window {
   color: @dim;
 }
@@ -292,28 +321,7 @@ window#waybar {
   color: @dim;
 }
 
-#bluetooth {
-  color: @bright;
-}
-
-#custom-weather {
-  color: @dim;
-  font-size: 14px;
-}
-
-#custom-screenrecording-indicator {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: alpha(@fg, 0.4);
-}
-
-#custom-screenrecording-indicator.active {
-  color: @bright;
-  animation-name: ember-blink;
-  animation-duration: 0.65s;
-}
-
+/* === Tooltips === */
 tooltip {
   padding: 6px 8px;
   background: @glass-strong;
@@ -327,10 +335,12 @@ tooltip label {
   color: @fg;
 }
 
+/* === Utilities === */
 .hidden {
   opacity: 0;
 }
 
+/* === Animations === */
 @keyframes ember-blink {
   to {
     color: alpha(@fg, 0.2);
