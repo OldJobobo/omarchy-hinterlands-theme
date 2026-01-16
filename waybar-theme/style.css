@@ -24,6 +24,87 @@
   letter-spacing: 0.75px;
 }
 
+/* === Spacing & Layout === */
+#waybar > box {
+  margin: 8px 4px 4px 4px;
+}
+
+.modules-left,
+.modules-right {
+  padding: 0px;
+  margin: 0px;
+}
+
+#workspaces {
+  margin: 4px 4px 4px 4px;
+  padding: 4px 4px;
+}
+
+#workspaces button {
+  margin: 2px 2px 2px 2px;
+}
+
+#tray,
+#mpris,
+#cpu,
+#clock,
+#battery,
+#network,
+#memory,
+#backlight,
+#bluetooth,
+#pulseaudio,
+#workspaces,
+#group-cpu-memory,
+#custom-omarchy,
+#custom-weather,
+#custom-update,
+#idle_inhibitor,
+#custom-expand-icon,
+#custom-screenrecording-indicator,
+#custom-updatespacman {
+  margin: 4px 8px 4px 8px;
+  padding: 4px 16px;
+}
+
+#custom-omarchy,
+#custom-update,
+#custom-updatespacman,
+#custom-expand-icon,
+#custom-screenrecording-indicator,
+#idle_inhibitor,
+#bluetooth,
+#network,
+#custom-omarchy,
+#workspaces,
+#pulseaudio {
+  padding: 2px 4px;
+}
+
+#mpris {
+  padding: 2px;
+}
+
+#mpris.playing {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#mpris.paused {
+  padding: 0;
+  margin: 0;
+}
+
+#mpris.empty,
+#mpris.stopped {
+  padding: 0;
+  margin: 0;
+}
+
+tooltip {
+  padding: 6px 8px;
+}
+
 /* === Bar Container & Layout === */
 window#waybar {
   background: transparent;
@@ -31,14 +112,11 @@ window#waybar {
 }
 
 #waybar > box {
-  margin: 8px 4px 4px 4px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .modules-left,
 .modules-right {
-  padding: 0px;
-  margin: 0px;
 }
 
 .modules-center {
@@ -48,16 +126,13 @@ window#waybar {
 /* === Workspaces === */
 #workspaces {
   background-color: @glass;
-  margin: 2px 4px 2px 4px;
   min-height: 24px;
-  padding: 2px 4px;
   border-radius: 0;
   border: none;
   box-shadow: 0 0 3px 2px @shadow;
 }
 
 #workspaces button {
-  margin: 2px 2px 2px 2px;
   border-radius: 0;
   border: none;
   background-color: transparent;
@@ -140,8 +215,6 @@ window#waybar {
 #custom-screenrecording-indicator,
 #custom-updatespacman {
   min-width: 40px;
-  margin: 2px 8px 4px 8px;
-  padding: 0 16px;
   min-height: 24px;
   border-radius: 0;
   background-color: @glass;
@@ -161,7 +234,6 @@ window#waybar {
 #bluetooth,
 #network,
 #pulseaudio {
-  padding: 2px;
   min-width: 40px;
 }
 
@@ -276,7 +348,6 @@ window#waybar {
 
 /* === MPRIS === */
 #mpris {
-  padding: 2px;
   background: transparent;
   box-shadow: 0 0 3px 2px @shadow;
   border-color: transparent;
@@ -287,8 +358,6 @@ window#waybar {
 
 #mpris.playing {
   min-width: 20px;
-  padding-left: 16px;
-  padding-right: 16px;
   border-radius: 0;
   background-color: @glass;
   box-shadow: 0 0 3px 2px @shadow;
@@ -296,8 +365,6 @@ window#waybar {
 
 #mpris.paused {
   min-width: 0;
-  padding: 0;
-  margin: 0;
   background: transparent;
   box-shadow: none;
   opacity: 0;
@@ -306,8 +373,6 @@ window#waybar {
 #mpris.empty,
 #mpris.stopped {
   min-width: 0;
-  padding: 0;
-  margin: 0;
   background: transparent;
   box-shadow: none;
 }
@@ -323,7 +388,6 @@ window#waybar {
 
 /* === Tooltips === */
 tooltip {
-  padding: 6px 8px;
   background: @glass-strong;
   border: 1px solid @edge;
   border-radius: 8px;
