@@ -1,0 +1,38 @@
+[window]
+opacity = 0.7
+
+[colors]
+transparent_background_colors = true
+
+[colors.primary]
+background = "#222222"
+foreground = "#ffffff"
+
+
+[colors.normal]
+black   = "#222222"
+red     = "#7c7c7c"
+green   = "#8b8b8b"
+yellow  = "#a0a0a0"
+blue    = "#686868"
+magenta = "#747474"
+cyan    = "#868686"
+white   = "#b9b9b9"
+
+[colors.bright]
+black   = "#525252"
+red     = "#7c7c7c"
+green   = "#8b8b8b"
+yellow  = "#a0a0a0"
+blue    = "#686868"
+magenta = "#747474"
+cyan    = "#868686"
+white   = "#ffffff"
+
+[colors.cursor]
+text   = "#222222"
+cursor = "#ffffff"
+
+[colors.selection]
+text = "#ffffff"
+background = "#686868"
